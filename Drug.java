@@ -2,7 +2,9 @@
 // June JUl 23- Aug 3 2026
 //Java QAP 4
 
-public class Drug {
+import java.io.Serializable;
+
+public class Drug implements Serializable {
     private String drugID;
     private String drugName;
     private double drugCost;
@@ -51,7 +53,8 @@ public class Drug {
         this.drugDosage =drugDosage;
     }
 
-    //toString
+//toString
+    @Override
     public String toString(){
         return ("Drug ID: " + drugID + " Drug Name: " + drugName + " Drug Cost: " + drugCost + " Drug Dosage: " + drugDosage + " ");
     }
