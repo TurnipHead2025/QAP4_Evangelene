@@ -5,7 +5,7 @@
 import java.util.Date;
 
 public class Patient {
-    private String patientID;
+    private int patientID;
     private String patientFName;
     private String patientLName;
     private Date  patientDOB;
@@ -13,7 +13,7 @@ public class Patient {
 //Constructors
     public Patient(){}
     
-    public Patient(String ID, String FName, String LName, Date DOB){
+    public Patient(int ID, String FName, String LName, Date DOB){
         this.patientID = ID;
         this.patientFName = FName;
         this.patientLName = LName;
@@ -22,7 +22,7 @@ public class Patient {
 
 
 //Methods
-    public String getPatientID(){
+    public int getPatientID(){
         return this.patientID;
     }
 
@@ -38,7 +38,7 @@ public class Patient {
         return this.patientDOB;
     }
 
-    public void setPatientID(String ID){
+    public void setPatientID(int ID){
         this.patientID = ID;
     }
 
