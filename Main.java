@@ -3,6 +3,8 @@
 // June JUl 23- Aug 3 2026
 //Java QAP 4
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -40,14 +42,24 @@ public class Main {
                         break;
 
                     case "3":
-                        System.out.println("[Database] Save Patient option selected.");
-                        PatientDBManager.getcon();
-                        // TODO: Call your DB save method here once Patient DB setup is ready
+                        System.out.println("Enter the Patients First Name:");
+                        String fname = scanner.nextLine();
+                        System.out.println("Enter the Patients Last Name:");
+                        String lname = scanner.nextLine();
+                        System.out.println("Enter the Patients DOB (yyyy-MM-dd):");
+                        String DOB = scanner.nextLine();
+                        try {
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                            Date dob = sdf.parse(DOB);
+                            Patient patient = new Patient(0, fname, lname, dob);
+                            PatientDBManager.savePatient(patient);
+                        } catch (Exception ex) {
+                            System.out.println("Invalid date format. Please use yyyy-MM-dd.");
+                        }
                         break;
 
                     case "4":
-                        System.out.println("[Database] Read Patients option selected.");
-                        // TODO: Call your DB read method here once Patient DB setup is ready
+                        PatientDBManager.readPatients();
                         break;
 
                     case "5":

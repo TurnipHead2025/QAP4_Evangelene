@@ -38,10 +38,6 @@ public class Patient {
         return this.patientDOB;
     }
 
-    public void setPatientID(int ID){
-        this.patientID = ID;
-    }
-
     public void setPatientFName(String FName){
         this.patientFName = FName;
     }

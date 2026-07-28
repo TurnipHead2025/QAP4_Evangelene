@@ -20,7 +20,8 @@ public class DrugFileManager {
             FileOutputStream fos = new FileOutputStream("drugs.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(drug); 
-            oos.close();          
+            oos.close();
+            System.out.println("Drug saved to file successfully!");
 
     } catch (IOException e) {
         System.out.println("Error writing to file: " + e.getMessage());
