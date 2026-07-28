@@ -26,7 +26,8 @@ public class Main {
             System.out.println("5. Exit");
             System.out.print("Select an option (1-5): ");
 
-            String choice = scanner.nextLine();
+            // Added .trim() here so extra whitespace or stray line breaks won't break option matching
+            String choice = scanner.nextLine().trim();
 
             try {
                 switch (choice) {
@@ -40,6 +41,7 @@ public class Main {
 
                     case "3":
                         System.out.println("[Database] Save Patient option selected.");
+                        PatientDBManager.getcon();
                         // TODO: Call your DB save method here once Patient DB setup is ready
                         break;
 
